@@ -1,0 +1,29 @@
+<div class="card shadow-lg mt-5">
+    <div class="card-header text-center">
+        <h1 class="display-6fw-bold">To Do List</h1>
+    </div>
+    <div class="card-body p-4">
+      
+        <ul class="list-group">
+            <li class="list-group-item mb-2 rounded">
+                <div class="input-group">
+                    <input type="text" #todotask class="form-control border-0 shadow-none py-3" placeholder="Enter the task">
+                    <button class="btn text-success border-0" (click)="Addtask(todotask)">
+                        <i class="fa-solid fa-circle-plus fa-xl"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="list-group-item mb-2 border rounded d-flex justify-content-between" *ngFor="let item of todos">
+                <span >
+                    <i class="text-success border-0" [ngClass]="item.isDone?'fa-solid fa-circle-check':'fa-regular fa-circle'" (click)="Updatetaskstatus(item.id, !item.isDone )"></i>
+                    {{item.title}}
+                </span>
+              <div>
+                <i class="fa-solid fa-trash-can" (click)="Deletetask(item.id)"></i>
+                <!-- <i class="fa-solid fa-pen"></i> -->
+              </div>
+            </li>
+        </ul>
+
+    </div>
+</div>

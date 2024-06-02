@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.list-group-item span{
+    cursor: pointer;
+}
+.fa-trash-can:hover{
+    cursor: pointer;
+    color: rgb(250, 39, 39);
+}
